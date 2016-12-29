@@ -37,6 +37,7 @@ coverage.out
 
 /gitea
 
+/node_modules
 /bin
 /dist
 /custom
