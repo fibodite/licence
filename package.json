@@ -1,0 +1,45 @@
+{
+  "private": true,
+  "name": "gitea",
+  "version": "0.0.0",
+  "description": "Git with a cup of tea",
+  "homepage": "https://github.com/go-gitea/gitea#readme",
+  "license": "MIT",
+  "author": {
+    "name": "The Gitea Authors",
+    "email": "team@gitea.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/go-gitea/gitea.git"
+  },
+  "bugs": {
+    "url": "https://github.com/go-gitea/gitea/issues",
+    "email": "security@gitea.io"
+  },
+  "config": {},
+  "scripts": {},
+  "main": "",
+  "devDependencies": {},
+  "dependencies": {
+    "@claviska/jquery-minicolors": "^2.2.4",
+    "@ryancavanaugh/jquery.are-you-sure": "0.0.14-alpha",
+    "clipboard": "^1.5.9",
+    "codemirror": "^5.17.0",
+    "dropzone": "^4.2.0",
+    "emojify.js": "^1.1.0",
+    "font-awesome": "^4.6.3",
+    "gitgraph.js": "^1.7.1",
+    "highlight.js": "^9.6.0",
+    "jquery": "^1.11.3",
+    "jquery-datetimepicker": "^2.5.4",
+    "octicons": "^4.3.0",
+    "pdfjs-dist": "^1.4.20",
+    "semantic-ui": "^2.2.1",
+    "simplemde": "^1.10.1"
+  },
+  "keywords": [
+    "gitea",
+    "git"
+  ]
+}
