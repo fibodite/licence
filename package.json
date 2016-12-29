@@ -18,9 +18,20 @@
     "email": "security@gitea.io"
   },
   "config": {},
-  "scripts": {},
+  "scripts": {
+    "build": "gulp build",
+    "clean": "gulp clean",
+    "watch": "gulp watch"
+  },
   "main": "",
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-include": "^2.3.1",
+    "gulp-less": "^3.3.0",
+    "gulp-sourcemaps": "^1.9.1",
+    "gulp-uglify": "^2.0.0"
+  },
   "dependencies": {
     "@claviska/jquery-minicolors": "^2.2.4",
     "@ryancavanaugh/jquery.are-you-sure": "0.0.14-alpha",
