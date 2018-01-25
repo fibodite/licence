@@ -256,10 +256,10 @@ func ParsePatch(maxLines, maxLineCharacters, maxFiles int, reader io.Reader) (*D
 		var linebuf bytes.Buffer
 		for {
 			peek, err := input.Peek(maxLineCharacters)
-			if err != bufio.ErrBufferFull {
+			if err != nil && err != bufio.ErrBufferFull {
 				return nil, fmt.Errorf("PeekByte: %v", err)
 			}
-			newLine := bytes.Index(peek, []byte("\n"));
+			newLine := bytes.IndexByte(peek, '\n');
 			if newLine == -1 {
 				// Instead of reading things, and copying memory around,
 				//  we simply discard them (which doesn't allocate memory)
@@ -272,7 +272,7 @@ func ParsePatch(maxLines, maxLineCharacters, maxFiles int, reader io.Reader) (*D
 			if curFile.IsIncomplete {
 				// Since we get here without hiting the above case, we've found a newline
 				//  and only discard that part.
-				input.Discard(newFile)
+				input.Discard(newLine)
 				break
 			}
 			buff := make([]byte, newLine)
@@ -287,7 +287,7 @@ func ParsePatch(maxLines, maxLineCharacters, maxFiles int, reader io.Reader) (*D
 			if n != newLine {
 				return nil, fmt.Errorf("Read: could not read enough bytes %d != %d", n, newLine)
 			}
-			n, err := linebuf.Write(buff)
+			n, err = linebuf.Write(buff)
 			if err != nil {
 				return nil, fmt.Errorf("Write: %v", err)
 			}
